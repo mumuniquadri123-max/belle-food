@@ -1,0 +1,88 @@
+/* Order CTA Section Styles */
+.cta-section {
+  background: linear-gradient(135deg, #121418 0%, #1e1111 100%);
+  padding: 6rem 2rem;
+  color: #FFFFFF;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-top: 1px solid #1E2229;
+  border-bottom: 1px solid #1E2229;
+}
+
+.cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-badge {
+  display: inline-block;
+  background-color: rgba(211, 47, 47, 0.2);
+  color: #E53935;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  margin-bottom: 1.2rem;
+}
+
+.cta-title {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+  line-height: 1.2;
+  color: #FFFFFF !important; /* Forces crisp white text */
+}
+
+.cta-description {
+  color: #B0BEC5;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.cta-primary-btn {
+  background-color: #D32F2F;
+  color: #FFFFFF;
+  padding: 0.9rem 2rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.cta-primary-btn:hover {
+  background-color: #b71c1c;
+}
+
+.cta-secondary-btn {
+  background-color: transparent;
+  color: #FFFFFF;
+  border: 1px solid #2C323D;
+  padding: 0.9rem 2rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.cta-secondary-btn:hover {
+  border-color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+@media (max-width: 768px) {
+  .cta-title {
+    font-size: 2.25rem;
+  }
+  .cta-buttons {
+    flex-direction: column;
+  }
+}
