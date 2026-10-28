@@ -25,8 +25,8 @@ export default function OrderModal({ isOpen, onClose, mealName, cartItems = [] }
       const orderDescription = cartItems.length > 0 
         ? cartItems.map(item => `- ${item.quantity}x ${item.name}`).join('%0A')
         : `- 1x ${mealName || 'Belle Food Special Dish'}`;
-
-      const businessPhoneNumber = '2348000000000'; // Replace with real Belle Food WhatsApp number
+// Real Belle Food WhatsApp Order Line
+      const businessPhoneNumber = '2349137421838';
       const message = `*NEW BELLE FOOD ORDER*%0A%0A*Customer Name:* ${formData.name}%0A*Phone Number:* ${formData.phone}%0A*Delivery Address:* ${formData.address}%0A%0A*Order Items:*%0A${orderDescription}%0A%0A*Payment Method:* Pay via WhatsApp / On Delivery%0A*Additional Notes:* ${formData.notes || 'None'}%0A%0A_Sent via Belle Food Web Proposal App_`;
 
       setTimeout(() => {

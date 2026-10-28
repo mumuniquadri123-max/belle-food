@@ -15,14 +15,12 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Quick Links */}
+        {/* Contact Numbers */}
         <div className="footer-col">
-          <h4 className="footer-heading">Quick Links</h4>
+          <h4 className="footer-heading">Direct Lines</h4>
           <ul className="footer-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="tel:09137421838">📞 0913 742 1838</a></li>
+            <li><a href="tel:09063584306">📞 0906 358 4306</a></li>
           </ul>
         </div>
 
