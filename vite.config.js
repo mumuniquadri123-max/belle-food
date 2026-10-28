@@ -3,7 +3,8 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  css: {
-    transformer: 'postcss',
+  build: {
+    // Disable CSS minification to prevent lightningcss/rolldown crashes on Vercel
+    cssMinify: false,
   },
 });
