@@ -25,13 +25,14 @@ export default function OrderModal({ isOpen, onClose, mealName, cartItems = [] }
       const orderDescription = cartItems.length > 0 
         ? cartItems.map(item => `- ${item.quantity}x ${item.name}`).join('%0A')
         : `- 1x ${mealName || 'Belle Food Special Dish'}`;
-// Real Belle Food WhatsApp Order Line
+
+      // Real Belle Food WhatsApp Order Line
       const businessPhoneNumber = '2349137421838';
       const message = `*NEW BELLE FOOD ORDER*%0A%0A*Customer Name:* ${formData.name}%0A*Phone Number:* ${formData.phone}%0A*Delivery Address:* ${formData.address}%0A%0A*Order Items:*%0A${orderDescription}%0A%0A*Payment Method:* Pay via WhatsApp / On Delivery%0A*Additional Notes:* ${formData.notes || 'None'}%0A%0A_Sent via Belle Food Web Proposal App_`;
 
-      setTimeout(() => {
-        window.open(`https://wa.me/${businessPhoneNumber}?text=${message}`, '_blank');
-      }, 1500);
+      // IMMEDIATE REDIRECT: Executing directly without setTimeout so mobile browsers never block it
+      const whatsappUrl = `https://wa.me/${businessPhoneNumber}?text=${message}`;
+      window.location.href = whatsappUrl;
     }
   };
 
@@ -125,13 +126,13 @@ export default function OrderModal({ isOpen, onClose, mealName, cartItems = [] }
           <div className="success-state">
             <div className="success-icon">✓</div>
             <h2 className="modal-title">
-              {orderMethod === 'online' ? 'Payment Successful! 🎉' : 'Order Prepared! 🚀'}
+              {orderMethod === 'online' ? 'Payment Successful! 🎉' : 'Redirecting to WhatsApp... 🚀'}
             </h2>
             <p className="modal-text">
               {orderMethod === 'online' ? (
                 <>Thank you, <strong>{formData.name}</strong>! Your online payment was successfully processed. Belle Food has received your order and is preparing your meal for immediate delivery.</>
               ) : (
-                <>Thank you, <strong>{formData.name}</strong>! Redirecting you to WhatsApp to dispatch your order and payment details to Belle Food instantly...</>
+                <>Thank you, <strong>{formData.name}</strong>! Opening WhatsApp to dispatch your order to Belle Food...</>
               )}
             </p>
             <button onClick={handleReset} className="modal-submit-btn">Close Window</button>
