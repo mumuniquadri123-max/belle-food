@@ -1,5 +1,5 @@
 import './Hero.css';
-import heroImage from '../assets/images/hero-food1.jpg';
+import heroImage from '../assets/images/hero-foods1.png';
 
 export default function Hero() {
   return (
