@@ -210,8 +210,20 @@
   background-color: #1ebe5d;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .checkout-action-buttons {
     flex-direction: column;
+  }
+  
+  .order-modal-content {
+    width: 95% !important;
+    max-height: 90vh !important;
+    overflow-y: auto !important;
+    padding: 1rem !important;
+  }
+
+  input, textarea {
+    font-size: 16px !important; /* Prevents auto-zoom on mobile safari/chrome */
+    padding: 0.75rem !important;
   }
 }
