@@ -5,12 +5,6 @@ export default function CartDrawer({ isOpen, onClose, cart, onUpdateQuantity, on
 
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
 
-  // Optional subtotal calculation if items carry a numeric price
-  const cartSubtotal = cart.reduce((sum, item) => {
-    const numericPrice = parseFloat(item.price) || 0;
-    return sum + (numericPrice * item.quantity);
-  }, 0);
-
   return (
     <div className="cart-overlay" onClick={onClose}>
       <div className="cart-drawer" onClick={(e) => e.stopPropagation()}>
@@ -33,9 +27,7 @@ export default function CartDrawer({ isOpen, onClose, cart, onUpdateQuantity, on
                 <li key={index} className="cart-item">
                   <div className="cart-item-info">
                     <h4>{item.name}</h4>
-                    <span className="cart-item-price">
-                      {item.price ? `₦${item.price} x ${item.quantity}` : 'Verified on Order'}
-                    </span>
+                    <span className="cart-item-price">Verified on Order</span>
                   </div>
                   <div className="cart-item-actions">
                     <button 
@@ -46,7 +38,7 @@ export default function CartDrawer({ isOpen, onClose, cart, onUpdateQuantity, on
                     >
                       -
                     </button>
-                    <span>{item.quantity}</span>
+                    <span className="qty-number">{item.quantity}</span>
                     <button 
                       type="button"
                       onClick={() => onUpdateQuantity(item.name, item.quantity + 1)}
@@ -62,15 +54,9 @@ export default function CartDrawer({ isOpen, onClose, cart, onUpdateQuantity, on
           )}
         </div>
 
-        {/* Footer / Checkout */}
+        {/* Footer / Checkout Button Pinned to Bottom */}
         {cart.length > 0 && (
           <div className="cart-footer">
-            {cartSubtotal > 0 && (
-              <div className="cart-subtotal-row" style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem', fontWeight: 'bold' }}>
-                <span>Estimated Total:</span>
-                <span style={{ color: '#E53935' }}>₦{cartSubtotal.toLocaleString()}</span>
-              </div>
-            )}
             <button type="button" className="checkout-btn" onClick={onCheckout}>
               Proceed to Checkout 🚀
             </button>

@@ -122,9 +122,9 @@
   background: none;
   border: none;
   color: #FFFFFF;
-  font-size: 1rem;
+  font-size: 1.1rem;
   cursor: pointer;
-  padding: 0 0.3rem;
+  padding: 0.2rem 0.5rem;
   transition: color 0.2s ease;
 }
 
@@ -155,25 +155,63 @@
   background-color: #b71c1c;
 }
 
+/* ==========================================================
+   Mobile Cart Drawer Responsiveness & Touch Target Polish
+   ========================================================== */
+
 @media (max-width: 768px) {
   .cart-drawer {
     width: 100% !important;
     max-width: 100% !important;
     height: 100vh !important;
+    padding: 0 !important;
+  }
+
+  .cart-header {
+    padding: 1.25rem 1rem !important;
+  }
+
+  .cart-body {
     padding: 1rem !important;
   }
+
+  .cart-item {
+    padding: 1rem !important;
+    border-radius: 10px !important;
+  }
+
+  /* Make quantity buttons comfortable for thumb taps */
+  .qty-btn {
+    min-width: 40px !important;
+    min-height: 40px !important;
+    font-size: 1.25rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: #1E2229 !important;
+    border-radius: 6px !important;
+  }
+
+  /* Pin checkout button neatly to bottom viewport */
   .cart-footer {
     position: sticky !important;
     bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
     background-color: #121418 !important;
-    padding: 1rem 0 !important;
+    padding: 1rem 1rem env(safe-area-inset-bottom, 1.25rem) 1rem !important;
+    box-sizing: border-box !important;
     border-top: 1px solid #1E2229;
   }
-  .checkout-whatsapp-btn {
+
+  .checkout-btn {
     width: 100% !important;
     min-height: 52px !important;
     font-size: 1.1rem !important;
-    background-color: #25D366 !important;
+    font-weight: 700 !important;
+    border-radius: 10px !important;
+    background-color: #D32F2F !important;
     color: #FFFFFF !important;
+    box-shadow: 0 4px 14px rgba(211, 47, 47, 0.4);
   }
-}
+}git
